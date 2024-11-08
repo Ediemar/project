@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Input Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .form-container {
+            max-width: 500px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], input[type="file"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Product Input Form</h2>
+    <form action="/submit-product" method="post" enctype="multipart/form-data">
+        <!-- Name -->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <!-- Selection Type -->
+        <div class="form-group">
+            <label for="selectionType">Selection Type</label>
+            <select id="selectionType" name="selectionType" required>
+                <option value="">Select Type</option>
+                <option value="Beef">Beef</option>
+                <option value="Chicken">Chicken</option>
+                <option value="Pork">Pork</option>
+                <option value="Lamb">Lamb</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Duck">Duck</option>
+                <option value="Fish">Fish</option>
+                <option value="Shellfish">Shellfish</option>
+                <option value="Ground Beef">Ground Beef</option>
+                <option value="Ribeye">Ribeye</option>
+                <option value="Sirloin">Sirloin</option>
+                <option value="Tenderloin">Tenderloin</option>
+                <option value="Chuck Roast">Chuck Roast</option>
+                <option value="Brisket">Brisket</option>
+                <option value="Chicken Breast">Chicken Breast</option>
+                <option value="Chicken Thighs">Chicken Thighs</option>
+                <option value="Chicken Wings">Chicken Wings</option>
+                <option value="Pork Chops">Pork Chops</option>
+                <option value="Pork Tenderloin">Pork Tenderloin</option>
+                <option value="Bacon">Bacon</option>
+                <option value="Sausage">Sausage</option>
+            </select>
+        </div>
+
+        <!-- Quantity -->
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+        </div>
+
+        <!-- Price -->
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" step="0.01" min="0" required>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+
+        <!-- Image Upload -->
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Product</button>
+    </form>
+</div>
+
+</body>
+</html>
